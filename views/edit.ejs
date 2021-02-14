@@ -1,0 +1,39 @@
+<html>
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <div class="container">
+            <div class="jumbotron mt-5">
+                <section>
+                <h1><b><a href="/" style="text-decoration: none; color: black;">X-MEMES</a></b></h1>
+                </section>
+                <hr>
+            </div>
+            <div class="jumbotron">
+              <form action="/edit/<%= id %>?_method=PUT" method="POST" autocomplete="off">
+                <input type="hidden" name="_method" value="PUT">
+                
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <small>*once set cannot be changed</small>
+                  <input type="text" class="form-control" disabled name="name" id="name" value="<%= name %>"  placeholder="Enter Name" >
+              </div>
+              
+              <div class="form-group">
+                  <label for="url">Url:</label>
+                  <input type="url" class="form-control" name="url" id="url" value="<%= url %>" placeholder="Enter url" required>
+              </div>
+              <div class="form-group">
+                <label for="caption">Caption:</label>
+                <input type="text" class="form-control" name="caption" id="caption" value="<%= caption %>" placeholder="Enter caption" required>
+            </div>
+              <br>
+                 <div class="row">
+                     <div class="col-md-8">
+                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                     </div>
+                 </div>
+                  </div>
+              </form>
+          </div>
+    </body>
+</html>
